@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "f23c2c1f-ea67-4032-bfe1-feb373675ba5",
+		"name": "BTP Destinations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3998976"
+	},
+	"item": [
+		{
+			"name": "Dest Access Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "sb-cloned79a10a115cd4d0ab44014ef0ebefd01!b335320|destination-xsappname!b62",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "a42a0c0a-fb26-48bc-9bd1-b95113d205d1$ct9ILr9z4R53_r4SjEs4aYeMhLAPWSt-hNDOibb22ac=",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "grant_type",
+						"value": "client_credentials",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "client_id",
+						"value": "sb-cloned79a10a115cd4d0ab44014ef0ebefd01!b335320|destination-xsappname!b62",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "response_type",
+						"value": "token",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "sb-cloned79a10a115cd4d0ab44014ef0ebefd01!b335320|destination-xsappname!b62",
+							"type": "text"
+						},
+						{
+							"key": "response_type",
+							"value": "token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://0082be05trial.authentication.us10.hana.ondemand.com/oauth/token",
+					"protocol": "https",
+					"host": [
+						"0082be05trial",
+						"authentication",
+						"us10",
+						"hana",
+						"ondemand",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SubAccountDestinations",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vMDA4MmJlMDV0cmlhbC5hdXRoZW50aWNhdGlvbi51czEwLmhhbmEub25kZW1hbmQuY29tL3Rva2VuX2tleXMiLCJraWQiOiJkZWZhdWx0LWp3dC1rZXktZDMyOTM0ZGI4NiIsInR5cCI6IkpXVCIsImppZCI6ICJrZVVmRzhoaWlHMnZ0TEZzRWpvQmM2MWdoTzVCUVhEVGovbVpYTlcvVHdBPSJ9.eyJqdGkiOiI3NzEyMjYxMDk3ZDY0ZWYzOWRhZmVhZTAxY2Q1NWNlYiIsImV4dF9hdHRyIjp7ImVuaGFuY2VyIjoiWFNVQUEiLCJzdWJhY2NvdW50aWQiOiI4ZGIzZTZjZS1hY2M1LTQyMjEtYjZhNi0wNjI4YzY4MGI3ZjQiLCJ6ZG4iOiIwMDgyYmUwNXRyaWFsIiwic2VydmljZWluc3RhbmNlaWQiOiJkNzlhMTBhMS0xNWNkLTRkMGEtYjQ0MC0xNGVmMGViZWZkMDEifSwic3ViIjoic2ItY2xvbmVkNzlhMTBhMTE1Y2Q0ZDBhYjQ0MDE0ZWYwZWJlZmQwMSFiMzM1MzIwfGRlc3RpbmF0aW9uLXhzYXBwbmFtZSFiNjIiLCJhdXRob3JpdGllcyI6WyJ1YWEucmVzb3VyY2UiXSwic2NvcGUiOlsidWFhLnJlc291cmNlIl0sImNsaWVudF9pZCI6InNiLWNsb25lZDc5YTEwYTExNWNkNGQwYWI0NDAxNGVmMGViZWZkMDEhYjMzNTMyMHxkZXN0aW5hdGlvbi14c2FwcG5hbWUhYjYyIiwiY2lkIjoic2ItY2xvbmVkNzlhMTBhMTE1Y2Q0ZDBhYjQ0MDE0ZWYwZWJlZmQwMSFiMzM1MzIwfGRlc3RpbmF0aW9uLXhzYXBwbmFtZSFiNjIiLCJhenAiOiJzYi1jbG9uZWQ3OWExMGExMTVjZDRkMGFiNDQwMTRlZjBlYmVmZDAxIWIzMzUzMjB8ZGVzdGluYXRpb24teHNhcHBuYW1lIWI2MiIsImdyYW50X3R5cGUiOiJjbGllbnRfY3JlZGVudGlhbHMiLCJyZXZfc2lnIjoiOTIyNzA4NDEiLCJpYXQiOjE3MjY4MjEzNDgsImV4cCI6MTcyNjg2NDU0OCwiaXNzIjoiaHR0cHM6Ly8wMDgyYmUwNXRyaWFsLmF1dGhlbnRpY2F0aW9uLnVzMTAuaGFuYS5vbmRlbWFuZC5jb20vb2F1dGgvdG9rZW4iLCJ6aWQiOiI4ZGIzZTZjZS1hY2M1LTQyMjEtYjZhNi0wNjI4YzY4MGI3ZjQiLCJhdWQiOlsidWFhIiwic2ItY2xvbmVkNzlhMTBhMTE1Y2Q0ZDBhYjQ0MDE0ZWYwZWJlZmQwMSFiMzM1MzIwfGRlc3RpbmF0aW9uLXhzYXBwbmFtZSFiNjIiXX0.iXE8elm_OnwYfVvAF4sY1J6e4zRvwnJQ367neFrUKQ-qvywDI9L8Z57FTFQzE6mR0K2YOKLXlYILLQOWhJM2HdiYja_TFj4GNZR022DX9PDkoB9IqclLJiIaiZ-eDkfB0hYbqBTCpqLf7KqrU4hlnHeo0uwIa1cxzxcld8JWfE2SN0Af74BTx9VSZXl3j7y3ML220e_IEi3Pl5h3j0L8ykHDHKRbH62DExiHomuq-96Y_buqifWMDqkoqTJQko0KL0BwYN4yMscpA1mZkysx2V0WLarRyFz1oyITbMP8_LmD86rvbshupunNX-gQo_wgy8nogiSnpAPMI0G2baDsyw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://destination-configuration.cfapps.us10.hana.ondemand.com/destination-configuration/v1/subaccountDestinations",
+					"protocol": "https",
+					"host": [
+						"destination-configuration",
+						"cfapps",
+						"us10",
+						"hana",
+						"ondemand",
+						"com"
+					],
+					"path": [
+						"destination-configuration",
+						"v1",
+						"subaccountDestinations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InstanceDestinations",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vMDA4MmJlMDV0cmlhbC5hdXRoZW50aWNhdGlvbi51czEwLmhhbmEub25kZW1hbmQuY29tL3Rva2VuX2tleXMiLCJraWQiOiJkZWZhdWx0LWp3dC1rZXktZDMyOTM0ZGI4NiIsInR5cCI6IkpXVCIsImppZCI6ICJrZVVmRzhoaWlHMnZ0TEZzRWpvQmM2MWdoTzVCUVhEVGovbVpYTlcvVHdBPSJ9.eyJqdGkiOiI3NzEyMjYxMDk3ZDY0ZWYzOWRhZmVhZTAxY2Q1NWNlYiIsImV4dF9hdHRyIjp7ImVuaGFuY2VyIjoiWFNVQUEiLCJzdWJhY2NvdW50aWQiOiI4ZGIzZTZjZS1hY2M1LTQyMjEtYjZhNi0wNjI4YzY4MGI3ZjQiLCJ6ZG4iOiIwMDgyYmUwNXRyaWFsIiwic2VydmljZWluc3RhbmNlaWQiOiJkNzlhMTBhMS0xNWNkLTRkMGEtYjQ0MC0xNGVmMGViZWZkMDEifSwic3ViIjoic2ItY2xvbmVkNzlhMTBhMTE1Y2Q0ZDBhYjQ0MDE0ZWYwZWJlZmQwMSFiMzM1MzIwfGRlc3RpbmF0aW9uLXhzYXBwbmFtZSFiNjIiLCJhdXRob3JpdGllcyI6WyJ1YWEucmVzb3VyY2UiXSwic2NvcGUiOlsidWFhLnJlc291cmNlIl0sImNsaWVudF9pZCI6InNiLWNsb25lZDc5YTEwYTExNWNkNGQwYWI0NDAxNGVmMGViZWZkMDEhYjMzNTMyMHxkZXN0aW5hdGlvbi14c2FwcG5hbWUhYjYyIiwiY2lkIjoic2ItY2xvbmVkNzlhMTBhMTE1Y2Q0ZDBhYjQ0MDE0ZWYwZWJlZmQwMSFiMzM1MzIwfGRlc3RpbmF0aW9uLXhzYXBwbmFtZSFiNjIiLCJhenAiOiJzYi1jbG9uZWQ3OWExMGExMTVjZDRkMGFiNDQwMTRlZjBlYmVmZDAxIWIzMzUzMjB8ZGVzdGluYXRpb24teHNhcHBuYW1lIWI2MiIsImdyYW50X3R5cGUiOiJjbGllbnRfY3JlZGVudGlhbHMiLCJyZXZfc2lnIjoiOTIyNzA4NDEiLCJpYXQiOjE3MjY4MjEzNDgsImV4cCI6MTcyNjg2NDU0OCwiaXNzIjoiaHR0cHM6Ly8wMDgyYmUwNXRyaWFsLmF1dGhlbnRpY2F0aW9uLnVzMTAuaGFuYS5vbmRlbWFuZC5jb20vb2F1dGgvdG9rZW4iLCJ6aWQiOiI4ZGIzZTZjZS1hY2M1LTQyMjEtYjZhNi0wNjI4YzY4MGI3ZjQiLCJhdWQiOlsidWFhIiwic2ItY2xvbmVkNzlhMTBhMTE1Y2Q0ZDBhYjQ0MDE0ZWYwZWJlZmQwMSFiMzM1MzIwfGRlc3RpbmF0aW9uLXhzYXBwbmFtZSFiNjIiXX0.iXE8elm_OnwYfVvAF4sY1J6e4zRvwnJQ367neFrUKQ-qvywDI9L8Z57FTFQzE6mR0K2YOKLXlYILLQOWhJM2HdiYja_TFj4GNZR022DX9PDkoB9IqclLJiIaiZ-eDkfB0hYbqBTCpqLf7KqrU4hlnHeo0uwIa1cxzxcld8JWfE2SN0Af74BTx9VSZXl3j7y3ML220e_IEi3Pl5h3j0L8ykHDHKRbH62DExiHomuq-96Y_buqifWMDqkoqTJQko0KL0BwYN4yMscpA1mZkysx2V0WLarRyFz1oyITbMP8_LmD86rvbshupunNX-gQo_wgy8nogiSnpAPMI0G2baDsyw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://destination-configuration.cfapps.us10.hana.ondemand.com/destination-configuration/v1/instanceDestinations",
+					"protocol": "https",
+					"host": [
+						"destination-configuration",
+						"cfapps",
+						"us10",
+						"hana",
+						"ondemand",
+						"com"
+					],
+					"path": [
+						"destination-configuration",
+						"v1",
+						"instanceDestinations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SearchDestination",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vMDA4MmJlMDV0cmlhbC5hdXRoZW50aWNhdGlvbi51czEwLmhhbmEub25kZW1hbmQuY29tL3Rva2VuX2tleXMiLCJraWQiOiJkZWZhdWx0LWp3dC1rZXktZDMyOTM0ZGI4NiIsInR5cCI6IkpXVCIsImppZCI6ICJrZVVmRzhoaWlHMnZ0TEZzRWpvQmM2MWdoTzVCUVhEVGovbVpYTlcvVHdBPSJ9.eyJqdGkiOiI3NzEyMjYxMDk3ZDY0ZWYzOWRhZmVhZTAxY2Q1NWNlYiIsImV4dF9hdHRyIjp7ImVuaGFuY2VyIjoiWFNVQUEiLCJzdWJhY2NvdW50aWQiOiI4ZGIzZTZjZS1hY2M1LTQyMjEtYjZhNi0wNjI4YzY4MGI3ZjQiLCJ6ZG4iOiIwMDgyYmUwNXRyaWFsIiwic2VydmljZWluc3RhbmNlaWQiOiJkNzlhMTBhMS0xNWNkLTRkMGEtYjQ0MC0xNGVmMGViZWZkMDEifSwic3ViIjoic2ItY2xvbmVkNzlhMTBhMTE1Y2Q0ZDBhYjQ0MDE0ZWYwZWJlZmQwMSFiMzM1MzIwfGRlc3RpbmF0aW9uLXhzYXBwbmFtZSFiNjIiLCJhdXRob3JpdGllcyI6WyJ1YWEucmVzb3VyY2UiXSwic2NvcGUiOlsidWFhLnJlc291cmNlIl0sImNsaWVudF9pZCI6InNiLWNsb25lZDc5YTEwYTExNWNkNGQwYWI0NDAxNGVmMGViZWZkMDEhYjMzNTMyMHxkZXN0aW5hdGlvbi14c2FwcG5hbWUhYjYyIiwiY2lkIjoic2ItY2xvbmVkNzlhMTBhMTE1Y2Q0ZDBhYjQ0MDE0ZWYwZWJlZmQwMSFiMzM1MzIwfGRlc3RpbmF0aW9uLXhzYXBwbmFtZSFiNjIiLCJhenAiOiJzYi1jbG9uZWQ3OWExMGExMTVjZDRkMGFiNDQwMTRlZjBlYmVmZDAxIWIzMzUzMjB8ZGVzdGluYXRpb24teHNhcHBuYW1lIWI2MiIsImdyYW50X3R5cGUiOiJjbGllbnRfY3JlZGVudGlhbHMiLCJyZXZfc2lnIjoiOTIyNzA4NDEiLCJpYXQiOjE3MjY4MjEzNDgsImV4cCI6MTcyNjg2NDU0OCwiaXNzIjoiaHR0cHM6Ly8wMDgyYmUwNXRyaWFsLmF1dGhlbnRpY2F0aW9uLnVzMTAuaGFuYS5vbmRlbWFuZC5jb20vb2F1dGgvdG9rZW4iLCJ6aWQiOiI4ZGIzZTZjZS1hY2M1LTQyMjEtYjZhNi0wNjI4YzY4MGI3ZjQiLCJhdWQiOlsidWFhIiwic2ItY2xvbmVkNzlhMTBhMTE1Y2Q0ZDBhYjQ0MDE0ZWYwZWJlZmQwMSFiMzM1MzIwfGRlc3RpbmF0aW9uLXhzYXBwbmFtZSFiNjIiXX0.iXE8elm_OnwYfVvAF4sY1J6e4zRvwnJQ367neFrUKQ-qvywDI9L8Z57FTFQzE6mR0K2YOKLXlYILLQOWhJM2HdiYja_TFj4GNZR022DX9PDkoB9IqclLJiIaiZ-eDkfB0hYbqBTCpqLf7KqrU4hlnHeo0uwIa1cxzxcld8JWfE2SN0Af74BTx9VSZXl3j7y3ML220e_IEi3Pl5h3j0L8ykHDHKRbH62DExiHomuq-96Y_buqifWMDqkoqTJQko0KL0BwYN4yMscpA1mZkysx2V0WLarRyFz1oyITbMP8_LmD86rvbshupunNX-gQo_wgy8nogiSnpAPMI0G2baDsyw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://destination-configuration.cfapps.us10.hana.ondemand.com/destination-configuration/v1/destinations/Northwind",
+					"protocol": "https",
+					"host": [
+						"destination-configuration",
+						"cfapps",
+						"us10",
+						"hana",
+						"ondemand",
+						"com"
+					],
+					"path": [
+						"destination-configuration",
+						"v1",
+						"destinations",
+						"Northwind"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
